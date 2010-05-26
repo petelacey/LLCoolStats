@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TeamsControllerTest < ActionController::TestCase
   setup do
-    @team = teams(:one)
+    @team = teams(:mets)
   end
 
   test "should get index" do
@@ -18,6 +18,7 @@ class TeamsControllerTest < ActionController::TestCase
 
   test "should create team" do
     assert_difference('Team.count') do
+      @team.name = "Red Sox"
       post :create, :team => @team.attributes
     end
 
