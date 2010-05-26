@@ -1,4 +1,6 @@
 LLCoolStats::Application.routes.draw do |map|
+  resources :teams
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
