@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TeamsControllerTest < ActionController::TestCase
   setup do
-    @team = teams(:mets)
+    @team = Factory.create(:team)
   end
 
   test "should get index" do

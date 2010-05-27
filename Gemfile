@@ -8,6 +8,11 @@ gem 'rails', '3.0.0.beta3'
 gem 'pg'
 gem 'haml'
 
+group :test do
+  # TODO: Correct when factory_girl Rails 3 ready
+  gem "factory_girl", :git => "git://github.com/szimek/factory_girl.git", :branch => "rails3" 
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 class TeamTest < ActiveSupport::TestCase
  
   def setup
-    @team = Team.new
+    @team = Factory.build(:team, :name => nil)
   end 
  
   # These two tests really just check that the validations are there, not that they're working.
@@ -15,7 +15,8 @@ class TeamTest < ActiveSupport::TestCase
   end
 
   def test_invalid_if_non_unique_name
-    @team.attributes = {:name => teams(:mets).name}
+    Factory.create(:team)
+    @team.name = 'Mets'
     assert_errors_contain @team, :name, 'taken'
   end
  
