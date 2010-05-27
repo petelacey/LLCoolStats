@@ -10,4 +10,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def assert_errors_contain(object, attr, substr)
+    object.valid?
+    assert object.errors[attr].join.include?(substr), "Expected #{object.class} #Errors hash to have attribute :#{attr} containing #{substr}, but was #{object.errors.inspect}"
+  end
 end

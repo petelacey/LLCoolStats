@@ -6,20 +6,17 @@ class TeamTest < ActiveSupport::TestCase
     @team = Team.new
   end 
  
+  # These two tests really just check that the validations are there, not that they're working.
+  # Rails tests that.
+  # DEBT: Looking into shoulda macros when/if Rails 3 compliant
+
   def test_invalid_without_name
-    assert !@team.valid?
-    assert @team.errors[:name].join.include?('blank')
+    assert_errors_contain @team, :name, 'blank'
   end
 
-  def test_valid_with_name
-    @team.attributes = { :name => 'Red Sox' }
-    assert @team.valid?
-  end
- 
   def test_invalid_if_non_unique_name
     @team.attributes = {:name => teams(:mets).name}
-    assert !@team.valid?
-    assert @team.errors[:name].join.include?('taken')
+    assert_errors_contain @team, :name, 'taken'
   end
  
 end
