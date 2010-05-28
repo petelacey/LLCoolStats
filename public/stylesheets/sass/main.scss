@@ -3,3 +3,17 @@ $bg-gray: #C3C3CD;
 body {
   background-color: $bg-gray;
 }
+
+.team {
+  background: -moz-linear-gradient(top, black, gray);
+  color: white;
+  padding-bottom: 1em;
+  padding-top: .25em;
+  -moz-border-radius: 10px;
+  text-align: center;
+  width: 25%;
+  margin: 1px;
+  font: {
+    size: 3em;
+  }
+}
