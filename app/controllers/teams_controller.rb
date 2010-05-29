@@ -18,6 +18,7 @@ class TeamsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @team }
+      format.json { render :json => @team }
     end
   end
 
@@ -62,9 +63,11 @@ class TeamsController < ApplicationController
       if @team.update_attributes(params[:team])
         format.html { redirect_to(@team, :notice => 'Team was successfully updated.') }
         format.xml  { head :ok }
+        format.json  { render :nothing => true }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @team.errors, :status => :unprocessable_entity }
+        format.json  { render :nothing => true }
       end
     end
   end

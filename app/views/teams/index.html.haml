@@ -1,8 +1,9 @@
 .teamlist
-  - @teams.each do |team|
-    .team= team.name
   .team
     %em New
+  - @teams.each do |team|
+    %div.team
+      %span.rest_in_place{:id => dom_id(team), :title => "Click to edit", :data => {:attribute => 'name', :object => 'team', :url => url_for(team)}}= team.name
 
 %h1 Listing teams
 %table

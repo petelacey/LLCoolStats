@@ -7,13 +7,27 @@ body {
 .team {
   background: -moz-linear-gradient(top, black, gray);
   color: white;
-  padding-bottom: 1em;
+  /*  padding-bottom: 1em; */
   padding-top: .25em;
+  height: 2em;
   -moz-border-radius: 10px;
   text-align: center;
   width: 25%;
   margin: 1px;
   font: {
     size: 3em;
+  }
+
+  input {
+    -moz-border-radius:20px 20px 20px 20px;
+    background:none;
+    color:#666666;
+    width: 80%;
+    padding: .25em;
+    text-align: center;
+    font: {
+      size: 1em;
+      family: inherit;
+    }
   }
 }

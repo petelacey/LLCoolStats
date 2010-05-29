@@ -5,8 +5,13 @@
     = stylesheet_link_tag :all
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
     = javascript_include_tag 'rails'
-
+    = javascript_include_tag "jquery.rest_in_place"
 
     = csrf_meta_tag
+
+    :javascript
+      jQuery(function(){
+        jQuery(".rest_in_place").rest_in_place();
+      });
   %body
     = yield

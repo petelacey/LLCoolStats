@@ -96,10 +96,7 @@ RestInPlaceEditor.prototype = {
   loadSuccessCallback : function(data) {
     //jq14: data as JS object, not string.
     if (jQuery.fn.jquery < "1.4") data = eval('(' + data + ')' );
-    // DEBT: Commenting this original line out.  It might be a rails 3 beta bug, but the attribute does not
-    // come wrapped in an object name. That is: I'm seeing this: "name":"Mets" instead of "team"["name":"Mets"].
-    // this.element.html(data[this.objectName][this.attributeName]);
-    this.element.html(data[this.attributeName]);
+    this.element.html(data[this.objectName][this.attributeName]);
     this.element.bind('click', {editor: this}, this.clickHandler);    
   },
   
@@ -114,8 +111,7 @@ RestInPlaceEditor.forms = {
     /* is bound to the editor and called to replace the element's content with a form for editing data */
     activateForm : function() {
       this.element.html('<form action="javascript:void(0)" style="display:inline;"><input type="text" value="' + this.oldValue + '"></form>');
-      /* DEBT: I changed select() to focus(). Make this resistant to upgrades of rest_in_place */
-      this.element.find('input')[0].focus();
+      this.element.find('input')[0].select();
       this.element.find("form")
         .bind('submit', {editor: this}, RestInPlaceEditor.forms.input.submitHandler);
       this.element.find("input")
