@@ -1,9 +1,11 @@
-.teamlist
-  .team
-    %em New
-  - @teams.each do |team|
-    %div.team
-      %span.rest_in_place{:id => dom_id(team), :title => "Click to edit", :data => {:attribute => 'name', :object => 'team', :url => url_for(team)}}= team.name
+.team
+  - @team.name = "Add New Team"
+  = form_for(@team, :remote => true) do |f|
+    = f.text_field :name
+%br
+
+#teams
+  = render :partial => "team", :collection => @teams
 
 %h1 Listing teams
 %table

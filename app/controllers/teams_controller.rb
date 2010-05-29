@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
   # GET /teams.xml
   def index
     @teams = Team.all
+    @team = Team.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,6 +48,7 @@ class TeamsController < ApplicationController
       if @team.save
         format.html { redirect_to(@team, :notice => 'Team was successfully created.') }
         format.xml  { render :xml => @team, :status => :created, :location => @team }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @team.errors, :status => :unprocessable_entity }

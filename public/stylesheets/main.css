@@ -6,12 +6,12 @@ body {
   color: white;
   /*  padding-bottom: 1em; */
   padding-top: .25em;
-  height: 2em;
+  height: 1.5em;
   -moz-border-radius: 10px;
   text-align: center;
   width: 25%;
   margin: 1px;
-  font-size: 3em; }
+  font-size: 2em; }
   .team input {
     -moz-border-radius: 20px 20px 20px 20px;
     background: none;
@@ -19,8 +19,5 @@ body {
     width: 80%;
     padding: .25em;
     text-align: center;
-    font-size: 1em;
-    font-family: inherit;
-    /* margin:0 0 30px; */
-    /* padding:9px 14px; */
-    /* width:220px; */ }
+    font-size: .6em;
+    font-family: inherit; }
