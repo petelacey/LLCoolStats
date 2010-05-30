@@ -7,6 +7,7 @@ gem 'rails', '3.0.0.beta3'
 
 gem 'pg'
 gem 'haml'
+gem 'matthuhiggins-foreigner', :require => 'foreigner'
 
 group :test do
   # TODO: Correct when factory_girl Rails 3 ready
