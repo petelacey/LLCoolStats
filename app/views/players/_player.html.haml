@@ -1,0 +1,7 @@
+%div.player
+  -#
+    %span.rest_in_place{:id => dom_id(team), :title => "Click to edit", :data => {:attribute => 'name', :object => 'team', :url => url_for(team)}}= team.name
+    =link_to("Roster", team_players_path(team), :remote => true)
+  
+  %span{:id => dom_id(player), :title => "Click to edit", :data => {:attribute => 'name', :object => 'team' }}= player.name
+

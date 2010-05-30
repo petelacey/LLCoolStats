@@ -9,6 +9,12 @@ body {
   background-color: $bg-gray;
 }
 
+#team-area {
+  width: 20%;
+  float: left;
+  margin-right: 1em;
+}
+
 .team {
   background: -moz-linear-gradient(top, black, gray);
   background: -webkit-gradient(linear, left-top, left-bottom, from(black), to(gray));
@@ -17,7 +23,6 @@ body {
   height: 1.5em;
   @include border-radius(10px);
   text-align: center;
-  width: 25%;
   margin: 1px;
   font: {
     size: 2em;
@@ -34,5 +39,14 @@ body {
       size: .6em;
       family: inherit;
     }
+  }
+
+  a {
+    font: {
+      size: .4em;
+    }
+    color: #00ff00;
+    float: right;
+    padding-right: 1em;
   }
 }

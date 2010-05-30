@@ -1,21 +1,23 @@
 body {
   background-color: #c3c3cd; }
 
+#team-area {
+  width: 20%;
+  float: left;
+  margin-right: 1em; }
+
 .team {
   background: -moz-linear-gradient(top, black, gray);
-  background: -webkit-gradient(linear, left top, left bottom, from(black), to(gray));
+  background: -webkit-gradient(linear, left-top, left-bottom, from(black), to(gray));
   color: white;
   padding-top: .25em;
   height: 1.5em;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   text-align: center;
-  width: 25%;
   margin: 1px;
   font-size: 2em; }
   .team input {
-    /*    -moz-border-radius:20px 20px 20px 20px;
-        -webkit-border-radius:20px 20px 20px 20px; */
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     background: none;
@@ -25,3 +27,8 @@ body {
     text-align: center;
     font-size: .6em;
     font-family: inherit; }
+  .team a {
+    font-size: .4em;
+    color: #00ff00;
+    float: right;
+    padding-right: 1em; }

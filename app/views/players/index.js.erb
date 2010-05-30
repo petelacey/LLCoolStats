@@ -1,0 +1,2 @@
+$('#main-area').empty();
+$('#main-area').append('<%= escape_javascript(render :partial => "players", :locals => { :players => @players }) %>');

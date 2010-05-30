@@ -1,0 +1,16 @@
+-#
+  .player
+    - @player.name = "Add New Team"
+    = form_for(@player, :remote => true) do |f|
+      = f.text_field :name
+  %br
+
+#players
+  = render :partial => players
+
+-#
+  %td= link_to 'Show', player
+  %td= link_to 'Edit', edit_player_path(player)
+  %td= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete
+  %br/
+  = link_to 'New Team', new_player_path

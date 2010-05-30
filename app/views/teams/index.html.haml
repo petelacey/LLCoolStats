@@ -1,15 +1,19 @@
-.team
-  - @team.name = "Add New Team"
-  = form_for(@team, :remote => true) do |f|
-    = f.text_field :name
-%br
+#team-area
+  .team
+    - @team.name = "Add New Team"
+    = form_for(@team, :remote => true) do |f|
+      = f.text_field :name
+  %br
 
-#teams
-  = render :partial => "team", :collection => @teams
+  #teams
+    = render :partial => @teams
 
--#
-  %td= link_to 'Show', team
-  %td= link_to 'Edit', edit_team_path(team)
-  %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete
-  %br/
-  = link_to 'New Team', new_team_path
+  -#
+    %td= link_to 'Show', team
+    %td= link_to 'Edit', edit_team_path(team)
+    %td= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete
+    %br/
+    = link_to 'New Team', new_team_path
+
+#main-area
+  %p Um, Hi.
