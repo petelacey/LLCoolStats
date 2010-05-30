@@ -14,10 +14,11 @@ class TeamTest < ActiveSupport::TestCase
     assert_errors_contain @team, :name, 'blank'
   end
 
-  def test_invalid_if_non_unique_name
-    Factory.create(:team)
-    @team.name = 'Mets'
-    assert_errors_contain @team, :name, 'taken'
-  end
+  # TODO: Delete this someday. Don't need this anymore, but keeping for reference
+  # def test_invalid_if_non_unique_name
+  #   Factory.create(:team)
+  #   @team.name = 'Mets'
+  #   assert_errors_contain @team, :name, 'taken'
+  # end
  
 end
