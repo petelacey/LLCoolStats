@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   # GET /teams
   def index
-    @teams = Team.all
+    @teams = Team.order('created_at DESC')
     @team = Team.new
 
     respond_to do |format|
