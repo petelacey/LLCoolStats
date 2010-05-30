@@ -1,16 +1,21 @@
 $bg-gray: #C3C3CD;
 
+@mixin border-radius($br) {
+  -moz-border-radius: $br;
+  -webkit-border-radius: $br;
+}
+
 body {
   background-color: $bg-gray;
 }
 
 .team {
   background: -moz-linear-gradient(top, black, gray);
+  background: -webkit-gradient(linear, left-top, left-bottom, from(black), to(gray));
   color: white;
-  /*  padding-bottom: 1em; */
   padding-top: .25em;
   height: 1.5em;
-  -moz-border-radius: 10px;
+  @include border-radius(10px);
   text-align: center;
   width: 25%;
   margin: 1px;
@@ -19,7 +24,7 @@ body {
   }
 
   input {
-    -moz-border-radius:20px 20px 20px 20px;
+    @include border-radius(20px);
     background:none;
     color:#666666;
     width: 80%;

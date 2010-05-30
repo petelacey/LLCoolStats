@@ -3,17 +3,21 @@ body {
 
 .team {
   background: -moz-linear-gradient(top, black, gray);
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(gray));
   color: white;
-  /*  padding-bottom: 1em; */
   padding-top: .25em;
   height: 1.5em;
   -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
   text-align: center;
   width: 25%;
   margin: 1px;
   font-size: 2em; }
   .team input {
-    -moz-border-radius: 20px 20px 20px 20px;
+    /*    -moz-border-radius:20px 20px 20px 20px;
+        -webkit-border-radius:20px 20px 20px 20px; */
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     background: none;
     color: #666666;
     width: 80%;
