@@ -1,5 +1,5 @@
 #team-area
-  .team
+  .resource
     - @team.name = "Add New Team"
     = form_for(@team, :remote => true) do |f|
       = f.text_field :name
@@ -16,4 +16,3 @@
     = link_to 'New Team', new_team_path
 
 #main-area
-  %p Um, Hi.

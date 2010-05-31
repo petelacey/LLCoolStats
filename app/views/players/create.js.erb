@@ -1,0 +1,6 @@
+$('#players').prepend('<%= escape_javascript(render :partial => "player", :locals => { :player => @player, :team => @team }) %>');
+$('#player_name').attr('value', 'Add New Player').select();
+jQuery(function(){
+    jQuery("#<%= dom_id(@player) %>").rest_in_place();
+});
+

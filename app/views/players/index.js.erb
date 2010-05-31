@@ -1,2 +1,5 @@
 $('#main-area').empty();
-$('#main-area').append('<%= escape_javascript(render :partial => "players", :locals => { :players => @players }) %>');
+$('#main-area').append('<%= escape_javascript(render :partial => "players", :locals => { :players => @players, :team => @team }) %>');
+jQuery(function(){
+  jQuery("#players .rest_in_place").rest_in_place();
+});

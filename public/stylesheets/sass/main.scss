@@ -5,6 +5,12 @@ $bg-gray: #C3C3CD;
   -webkit-border-radius: $br;
 }
 
+@mixin box-shadow($h, $v, $b, $c) {
+  -moz-box-shadow: $h $v $b $c;
+  -webkit-box-shadow: $h, $v, $b, $c;
+  box-shadow: $h, $v, $b, $c;
+}
+
 body {
   background-color: $bg-gray;
 }
@@ -15,12 +21,35 @@ body {
   margin-right: 1em;
 }
 
-.team {
+#main-area {
+  width: 75%;
+  float: left;
+  margin-left: 1em;
+}
+
+#players-details {
+  background: #d4d4e3;
+  @include border-radius(20px);
+  @include box-shadow(5px, 5px, 5px, #666);
+  padding-left: 1em;
+  padding-bottom: 1em;
+}
+
+.team-name {
+  color: #000066;
+  font: {
+    size: 2em;
+  }
+  text-align: center;
+}
+
+.resource {
   background: -moz-linear-gradient(top, black, gray);
   background: -webkit-gradient(linear, left-top, left-bottom, from(black), to(gray));
   color: white;
   padding-top: .25em;
   height: 1.5em;
+  width: 300px;
   @include border-radius(10px);
   text-align: center;
   margin: 1px;

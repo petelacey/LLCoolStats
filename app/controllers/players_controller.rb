@@ -1,8 +1,10 @@
 class PlayersController < ApplicationController
+  before_filter :get_team
+
   # GET /players
   def index
-    team = Team.find(params[:team_id])
-    @players = team.players.all
+    @players = @team.players.all
+    @player = Player.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,7 +38,7 @@ class PlayersController < ApplicationController
 
   # POST /players
   def create
-    @player = Player.new(params[:player])
+    @player = @team.players.new(params[:player])
 
     respond_to do |format|
       if @player.save
@@ -71,5 +73,9 @@ class PlayersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(players_url) }
     end
+  end
+
+  def get_team
+    @team = Team.find(params[:team_id])
   end
 end
