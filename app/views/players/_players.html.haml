@@ -1,5 +1,5 @@
 #players-details
-  %p.team-name= team.name
+  %p.team-name= "#{team.name} Roster"
   .resource
     - @player.name = "Add New Player"
     = form_for([team, @player], :remote => true) do |player_form|

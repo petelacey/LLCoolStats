@@ -28,7 +28,7 @@ body {
 
 .resource {
   background: -moz-linear-gradient(top, black, gray);
-  background: -webkit-gradient(linear, left-top, left-bottom, from(black), to(gray));
+  background: -webkit-gradient(linear, center top, center bottom, from(black), to(gray));
   color: white;
   padding-top: .25em;
   height: 1.5em;
